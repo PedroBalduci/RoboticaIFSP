@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="icon" href="SPUTNIK.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Robótica IFSP - BRI</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    	<!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    	<style type="text/css">
+    		fieldset {
+    			align-content: center;
+				width: 90%;
+				background-color: #b3b3b3;
+    			margin: 50px;
+    			margin-left: 80px;
+    			padding: 3rem;
+    		}
+
+    		header {
+    			height: 84px;
+    		}
+
+    		textarea {
+				resize: none;
+			}
+
+    		#btn_Area {
+    			width: auto;
+    			border-radius: 0px;
+    		}
+
+    		#nome, #email, #assunto, #mensagem, #anexo, #data_nasc, #cpf, #ddd, #telefone, #prontuario, #login, #senha, #nova_senha {
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 400;  
+				font-weight: bold;
+				background-color: #e6e6e6;
+				border: none;
+				width: 100%;
+				padding: 5px;
+				float: left;
+			}
+
+			#button_1 {
+				width: 30%;
+				background-color: #e6e6e6;
+				border-radius: 5px;
+				border: none;
+				padding: 13px;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 600;  
+				border-style: solid;
+				border-color: #9d9d9d;
+				border-width: thin;
+				margin-bottom: 22px;
+				margin-top: 18px;
+				float: left;
+				margin-left: 35%;
+				margin-right: 30%;
+			}
+
+			#button_2 {
+				width: 100%;
+				margin-top: 8px;
+				background-color: #4CAF50;
+				border-radius: 5px;
+				border: none;
+				padding: 13px;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 600;  
+				border-style: solid;
+				border-color: #9d9d9d;
+				border-width: thin;
+				float: left;
+	        	border: none;
+	        	border-radius: 15px;
+	        	cursor: pointer;
+			}
+
+			#button_3 {
+				width: 100%;
+				margin-top: 8px;
+				background-color: #e60000;
+				border-radius: 5px;
+				border: none;
+				padding: 13px;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 600;  
+				border-style: solid;
+				border-color: #9d9d9d;
+				border-width: thin;
+				float: left;
+	        	border: none;
+	        	border-radius: 15px;
+	        	cursor: pointer;
+			}
+	    	
+			input[type="radio"]{
+				-ms-transform: scale(1.5); /* IE 9 */
+			    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+			    transform: scale(1.5);
+			}
+
+		    h6 {
+				background-color: #66a3ff;
+				text-align: center;
+				font-size: 12px;
+				font-weight: 400;
+
+			}
+		
+			.campos {
+				text-align: center;
+				font-weight: 600;
+				font-size: 15px;
+				margin-top: 20px;
+			}
+
+			.text{
+				text-align: justify;
+				color: black;
+				font-size: 
+			}
+
+			.text2{
+				font-weight: bold;
+			}
+
+			.modal-title{
+				font-size: 36px;
+				font-weight: bold;
+				text-align: center;
+			}
+
+			.modal-body {
+				padding: 2rem;
+			}
+
+			#modal-body {
+				padding: 1rem;
+			}
+
+			.modal-footer {
+				margin-top: -25px;
+			}
+
+			.bo{
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 5%;
+				color: #fff;
+				text-align: center;
+				font-weight: 300;
+				font-size: 30px;
+				letter-spacing: 10px;
+				margin-top: 180px;
+				padding-left: 10px;
+				text-transform: uppercase;
+			}
+
+			.btn-astro{
+				background-image: linear-gradient(120deg,#00664d,#00cc99);
+				border: none;
+				color: white;
+				padding: 15px 42px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				border-radius: 50px;
+			}
+
+			.btn-astro:hover, .btn-astro:active, .btn-astro:focus {
+				color: #fff;
+			}
+
+			.img_robot{
+				float: left;
+				width: 300px;
+				margin-left: 500px; 
+				margin-top:100px;
+
+			}
+
+			.sexo{
+				margin-top: 6px;
+				margin-bottom: 6px;
+			}
+    	</style>
+
+		<script type="text/javascript">
+			$(document).ready(functin()){
+				$('.toggle').click(function()){
+					$('ul').toggleClass('active')
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+		
+		<section class="menu">
+			<label for="btn_menu">&#9776;</label>
+			<header>
+				<a href="" class="logo">
+					<img src="./img/IFSP.png" style="width: 280px; height: 80px; top: 0;">
+				</a>
+				<a class="toggle"><b>Menu</b></a>
+				<ul class="active">
+					<li><a href="index.php"><b>Home</b></a></li>
+					<li><a href="#"><b>Modalidades</b></a>
+						<ul>
+							<li><a href="http://www.obr.org.br/manuais/OBR2020_MP_ManualRegionalEstadual.pdf"><b>Busca e Resgate</b></a></li>
+							<li><a href="https://www1.tecnoblog.net/meiobit/2017/sumo-luta-entre-robos-no-japao/"><b>Sumô Autônomo</b></a></li>
+							<li><a href="https://videira.ifc.edu.br/wp-content/uploads/sites/27/2015/11/DESENVOLVIMENTO-DA-L%C3%93GICA-DE-CONTROLE-DE-UM-ROB%C3%94-DE-SUMO.pdf"><b>Sumô Controlável</b></a></li>
+							<li><a href="https://bri.ifsp.edu.br/index.php/o-que-e-rss/68-informativos/1247-campus-birigui-participa-do-3-torneio-de-robotica-do-ifsp"><b>Corrida de Robôs</b></a></li>
+						</ul>	
+					</li>
+					<li><a href="#"><b>Pesquisas</b></a>
+						<ul>
+							<li><a href="http://ocs.ifsp.edu.br/index.php/conict/xiconict/paper/view/6938"><b>Robótica Aplicada a Medicina</b></a></li>
+						</ul>
+					</li>
+					<li><a href="#"><b>Informação</b></a></li>
+					<button id="btn_Area" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Modal" ><b>ÁREA RESTRITA</b></button>
+					<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				    	<div class="modal-dialog">
+				    		<div class="modal-content">
+				    			<div class="modal-header">
+				    				<h5 class="modal-title">Faça Login</h5>
+									<button type="button" class="close" data-dismiss="modal"><span>×</span></button>	
+								</div>
+				       			<div id="modal-body" class="modal-body">
+									<form method="post" enctype="multipart/form-data" action="login.php">
+	 									<div id="box_comp">
+		 		    						<label class="text2" for="nome" class="text2"> Login*: </label><br>
+				  							<input type="text" id="login" name="login" required placeholder="Insira aqui o seu Login"><br>
+										</div>
+										<div>
+											<br>
+							 				<label class="text2" for="email"> Senha*: </label> <br>
+							 				<input type="password" id="senha" name="senha" required placeholder="Insira aqui sua Senha" ><br>
+										</div>
+										<div>
+											<br>
+											<p>Esqueceu a senha? <a href="esqueceu.html" target="_blank">Clique aqui</a></p>
+											<input type="submit" value="ENVIAR" class="botao_login" id="button_1" name="btn_enviar"><br><br>
+										</div>
+										<div class="modal-footer">
+											<p id="paragra">Ainda não possui uma conta? <a href="formulario_cadastro.php" target="_blank">Cadastre-se!</a></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+										</div>
+									</form>		
+			        			</div>
+			      			</div>
+			    		</div>
+			  		</div>						
+				</ul>
+			</header>
+		</section>
+
+		<form method="post" action="nova_senha.php">
+			<fieldset>
+				<h1><b>CADASTRE SUA NOVA SENHA</b></h1><br>
+
+				<label><b>Login: * </b></label>
+				<input type="text" name="login" id="login" placeholder="Insira aqui seu Login" required><br><br><br>
+				
+				<label><b>Nova Senha:* </b></label>
+				<input type="password" name="nova_senha" id="nova_senha" placeholder="Insira aqui sua Nova Senha" minlength="8" maxlength="40" required><br><br><br>
+
+				<input type="submit" value="CADASTRAR" class="botao" id="button_2" name="cadastrar">
+				<input type="reset" value="CANCELAR" class="botao" id="button_3" name="cancelar"><br><br><br>
+
+				<p class="campos"><br><br> Campos marcados com " * " são obrigatórios!</p>
+			</fieldset>
+		</form>
+
+		<div class="bo">
+			<button class="btn btn-astro"  data-toggle="modal" data-target="#butoncadastro">
+				Dúvidas? Mande um E-mail!
+			</button>
+		</div>
+		<form id="duvida" name="duvida" method="post" action="duvidas.php">
+			<div class="modal fade" class="ondas" id="butoncadastro">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Dúvidas? Mande um E-mail!</h5>
+							<button type="button" class="close" data-dismiss="modal"><span>x</span></button>
+						</div>
+
+						<div class="modal-body">
+
+							<p class="text"> Em caso de dúvidas em relação a programação, lógica e competições, ou ainda sugestões de como podemos melhorar, é só preencher o formulário abaixo!</p>
+
+			
+							<form method="post" enctype="multipart/form-data">
+	 							<div id="box_comp">
+	 		    					<label class="text2" for="nome" class="text2"> Nome*: </label><br>
+			  						<input type="text" id="nome" name="nome" required placeholder="Insira aqui o seu nome"><br>
+								</div>
+
+								<div id="box_comp"> 
+									<br>
+							 		<label class="text2" for="email"> E-mail*: </label><br>
+							 		<input type="email" id="email" name="email" required placeholder="Insira aqui seu e-mail" ><br>
+								</div>
+	 			
+					 		 	<div id="box_comp">
+					 		 		<br>
+							 		<label class="text2" for="endereco"> Assunto*: </label><br>
+							 		<input type="text" id="assunto" name="assunto" required placeholder="Insira aqui o assunto"><br>
+								</div><br>
+
+							 	<div id="box_comp">
+							 		<label class="text2" for="anexo"> Anexo (máximo de 5MB): </label><br>
+							 		<input type="file" id="anexo" name="anexo"><br>
+								</div> <br>
+
+								<div id="box_comp">
+							 		<label class="text2" for="endereco"> Mensagem*: </label><br>
+							 		<textarea id="mensagem" wrap="hard" required placeholder="Insira aqui a mensagem" rows="5" cols="98"></textarea><br>
+								</div>
+
+								<input type="submit" value="ENVIAR" class="botao" id="button_1" name="acao"><br><br>
+							</form>
+							<p class="campos"><br><br> Campos marcados com " * " são obrigatórios!</p>
+
+							<div class="modal fade" id="butoncadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">					
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+										</div>
+									</div>
+								</div>
+							</div>										
+	            		</div>										
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
